@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CRUD APP</title>
+    </head>
+    <body>
+        <h1>MY CRUD APPLICATION WITH MEN STACK</h1>
+        <form action="/quotes" method="post">
+            <input type="text" name="name" placeholder="name" autofocus>
+            <input type="text" name="quote" placeholder="quote">
+            <button type="submit">Submit</button>
+        </form>
+        <h2>Quotes</h2>
+        <ul class="quotes">
+            <% for(var i = 0; i < quotes.length; i++){%>
+                <li class="quote">
+                    <span><%= quotes[i].name %></span>
+                    <span><%= quotes[i].quote %></span>
+                </li>
+            <% } %>
+        </ul>
+        <div>
+            <h2>Darth Vader inavdes!</h2>
+            <p>Replace first Yoda's quote with a quote written by Darth Vadar</p>
+            <button id="update-button">Replace Yoda's quote</button>
+        </div>
+        <div>
+            <h2>Remove Darth Vadar!</h2>
+            <p>Delete one Darth Vadar's quote. Does nothing if there are no more Darth Vadar's quote</p>
+            <button id="delete-button">Delete Darth Vadar's</button>
+            <h1 id="message"></h1>
+        </div>
+        <script src="/main.js"></script>
+    </body>
+</html>
